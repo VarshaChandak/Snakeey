@@ -241,3 +241,5 @@ function loop() {
     clearTimeout(requestID);
     loop();
   }
+  initialize();
+loop();
