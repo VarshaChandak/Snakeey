@@ -210,3 +210,15 @@ function initialize() {
   food = new Food();
   dom_replay.addEventListener('click', reset);
 }
+function loop() {
+    clear();
+    if (!isGameOver) {
+      requestID = setTimeout(loop, 1000/60);
+      helpers.drawGrid();
+      snake.update();
+      food.draw();
+      particles.forEach(p => p.update());
+      helpers.garbageCollector();
+    } else gameOver();
+  }
+  
