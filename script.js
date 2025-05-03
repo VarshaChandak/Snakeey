@@ -122,3 +122,10 @@ let snake,
           this.history.forEach(p => CTX.fillRect(p.x, p.y, this.size, this.size));
         }
       }
+      Snake.prototype.walls = function() {
+        if (this.pos.x >= W) this.pos.x = 0;
+        if (this.pos.y >= H) this.pos.y = 0;
+        if (this.pos.x < 0) this.pos.x = W - this.size;
+        if (this.pos.y < 0) this.pos.y = H - this.size;
+      };
+      
