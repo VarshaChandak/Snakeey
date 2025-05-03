@@ -53,4 +53,35 @@ let snake,
           }
         }
       },
+      drawGrid() {
+        CTX.lineWidth = 1.1;
+        CTX.strokeStyle = "#232332";
+        CTX.shadowBlur = 0;
+        for (let i = 1; i < cells; i++) {
+          let f = (W / cells) * i;
+          CTX.beginPath(); CTX.moveTo(f, 0); CTX.lineTo(f, H); CTX.stroke();
+          CTX.beginPath(); CTX.moveTo(0, f); CTX.lineTo(W, f); CTX.stroke();
+        }
+      },
+      randHue() {
+        return Math.floor(Math.random() * 360);
+      },
+      hsl2rgb(hue, saturation, lightness) {
+        if (hue == null) return [0, 0, 0];
+        let chroma = (1 - Math.abs(2 * lightness - 1)) * saturation;
+        let hp = hue / 60;
+        let x = chroma * (1 - Math.abs((hp % 2) - 1));
+        let [r, g, b] = hp < 1 ? [chroma, x, 0]
+          : hp < 2 ? [x, chroma, 0]
+          : hp < 3 ? [0, chroma, x]
+          : hp < 4 ? [0, x, chroma]
+          : hp < 5 ? [x, 0, chroma]
+          : [chroma, 0, x];
+        let m = lightness - chroma / 2;
+        return [r + m, g + m, b + m].map(v => Math.round(v * 255));
+      },
+      lerp(start, end, t) {
+        return start * (1 - t) + end * t;
+      }
+    };
     
