@@ -193,3 +193,12 @@ let snake,
           this.draw();
         }
       }
+      function incrementScore() {
+        score++;
+        dom_score.innerText = String(score).padStart(2, '0');
+      }
+      function particleSplash() {
+        for (let i = 0; i < splashingParticleCount; i++) {
+          particles.push(new Particle(food.pos, currentHue));
+        }
+      }
