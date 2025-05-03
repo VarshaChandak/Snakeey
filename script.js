@@ -20,3 +20,27 @@ let snake,
   splashingParticleCount = 20,
   cellsCount,
   requestID;
+  let helpers = {
+    Vec: class {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+      }
+      add(v) {
+        this.x += v.x;
+        this.y += v.y;
+        return this;
+      }
+      mult(v) {
+        if (v instanceof helpers.Vec) {
+          this.x *= v.x;
+          this.y *= v.y;
+          return this;
+        } else {
+          this.x *= v;
+          this.y *= v;
+          return this;
+        }
+      }
+    },
+  
