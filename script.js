@@ -166,3 +166,13 @@ let snake,
           CTX.shadowBlur = 0;
         }
       }
+      Food.prototype.spawn = function() {
+        let x, y;
+        do {
+          x = Math.floor(Math.random() * cells) * cellSize;
+          y = Math.floor(Math.random() * cells) * cellSize;
+        } while (snake.history.some(p => helpers.isCollision(p, { x, y })));
+        this.pos = new helpers.Vec(x, y);
+        this.color = `hsl(${helpers.randHue()},100%,50%)`;
+        currentHue = this.color;
+      };
