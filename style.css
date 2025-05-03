@@ -71,3 +71,53 @@
     background: #4cffd7;
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+  #replay svg {
+    margin-right: 8px;
+  }
+  @media (max-width: 600px) {
+    #replay {
+      margin-bottom: 20px;
+    }
+    #replay,
+    h2 {
+      transform: rotate(0deg);
+    }
+    #ui {
+      flex-flow: row wrap;
+      margin-bottom: 20px;
+    }
+    #score {
+      margin-top: 0;
+      margin-left: 20px;
+    }
+    .container {
+      flex-flow: column wrap;
+    }
+  }
+  #author {
+    width: 100%;
+    bottom: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: inherit;
+    text-transform: uppercase;
+    padding-left: 35px;
+  }
+  #author span {
+    font-size: 10px;
+    margin-left: 20px;
+    color: inherit;
+    letter-spacing: 4px;
+  }
+  #author h1 {
+    font-size: 25px;
+  }
+  .wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
