@@ -43,4 +43,14 @@ let snake,
         }
       }
     },
-  
+    isCollision(v1, v2) {
+        return v1.x == v2.x && v1.y == v2.y;
+      },
+      garbageCollector() {
+        for (let i = 0; i < particles.length; i++) {
+          if (particles[i].size <= 0) {
+            particles.splice(i, 1);
+          }
+        }
+      },
+    
