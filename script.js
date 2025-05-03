@@ -232,3 +232,12 @@ function loop() {
     CTX.fillText(`SCORE ${score}`, W/2, H/2+40);
     CTX.fillText(`MAX ${maxScore}`, W/2, H/2+60);
   }
+  function reset() {
+    isGameOver = false;
+    score = 0;
+    dom_score.innerText = '00';
+    snake = new Snake();
+    particles = [];
+    clearTimeout(requestID);
+    loop();
+  }
