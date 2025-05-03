@@ -202,3 +202,11 @@ let snake,
           particles.push(new Particle(food.pos, currentHue));
         }
       }
+      function clear() { CTX.clearRect(0, 0, W, H); }
+function initialize() {
+  CTX.imageSmoothingEnabled = false;
+  KEY.listen();
+  snake = new Snake();
+  food = new Food();
+  dom_replay.addEventListener('click', reset);
+}
