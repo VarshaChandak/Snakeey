@@ -226,3 +226,9 @@ function loop() {
     CTX.textAlign = 'center';
     CTX.font = 'bold 30px sans-serif';
     CTX.fillText('GAME OVER', W/2, H/2);
+    maxScore = Math.max(maxScore, score);
+    window.localStorage.setItem('maxScore', maxScore);
+    CTX.font = '15px sans-serif';
+    CTX.fillText(`SCORE ${score}`, W/2, H/2+40);
+    CTX.fillText(`MAX ${maxScore}`, W/2, H/2+60);
+  }
