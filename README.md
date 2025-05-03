@@ -1,76 +1,22 @@
-🐍 Snake Game — Vanilla JS Edition
-A modern, visually enhanced version of the classic Snake Game, built using HTML5 Canvas and pure JavaScript—no libraries or frameworks involved.
-🚀 Features
-Smooth animations and controls
+# 🐍 Snake Game
 
-Self-collision and wall wrapping logic
+A modern Snake Game built with pure JavaScript and HTML Canvas. Features smooth animation, particle effects, score tracking, and localStorage support for high scores.
 
-Dynamic food spawning with vibrant color effects
+## 🎮 Features
 
-Particle splash animation on eating food
+- Classic Snake gameplay with arrow key controls
+- Self-collision detection and game-over logic
+- Colorful food with splash particles on consumption
+- Persistent high score using `localStorage`
+- Grid visuals and polished UI
 
-Score tracking and persistent high score via localStorage
+## 🚀 Getting Started
 
-Fully responsive 400x400 grid game board
+To run the game locally:
 
-🖥️ Demo
-Press Arrow Keys to control the snake.
-Click Replay to restart the game after a collision.
+1. Clone the repository:
+   git clone https://github.com/your-username/snake-game.git
+   cd snake-game
+2. Open index.html in any modern browser.
 
-📁 Setup & Run
-Clone or download this repository.
-
-Ensure the folder has both snake.js and this index.html:
-
-html
-Copy
-Edit
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Snake Game</title>
-</head>
-<body>
-  <div id="controls">
-    Score: <span id="score">00</span>
-    <button id="replay">Replay</button>
-  </div>
-  <div id="canvas"></div>
-  <script src="snake.js"></script>
-</body>
-</html>
-Open index.html in your browser.
-
-Optional: Run a local server
-For best compatibility, especially with localStorage:
-
-bash
-Copy
-Edit
-# Python 3
-python -m http.server 8000
-
-# Or use Node.js http-server
-npm install -g http-server
-http-server
-Then go to http://localhost:8000.
-
-📦 Commit Structure
-The code is structured with 20 progressive commits:
-
-🧱 Canvas Initialization
-
-🐍 Snake Movement & Collision
-
-🍎 Food & Particle Effects
-
-🎮 Input Controls
-
-🏁 Game Over Handling
-
-💾 High Score Persistence
-
-🎨 Final polish and visual tuning
-
+No build tools or installations required – pure HTML & JS!
