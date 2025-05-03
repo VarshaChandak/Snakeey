@@ -135,3 +135,21 @@ let snake,
         if (KEY.ArrowLeft) this.dir = new helpers.Vec(-s, 0);
         if (KEY.ArrowRight) this.dir = new helpers.Vec(s, 0);
       };
+      Snake.prototype.selfCollision = function() {
+        this.history.forEach(p => {
+          if (helpers.isCollision(this.pos, p)) isGameOver = true;
+        });
+      };
+      Snake.prototype.update = function() {
+        this.walls(); this.draw(); this.controlls();
+        if (--this.delay === 0) {
+          if (helpers.isCollision(this.pos, food.pos)) {
+            incrementScore(); particleSplash(); food.spawn(); this.total++;
+          }
+          this.history.push(new helpers.Vec(this.pos.x, this.pos.y));
+          if (this.history.length > this.total) this.history.shift();
+          this.pos.add(this.dir);
+          this.delay = 5;
+          if (this.total > 1) this.selfCollision();
+        }
+      };
