@@ -153,3 +153,16 @@ let snake,
           if (this.total > 1) this.selfCollision();
         }
       };
+      class Food {
+        constructor() {
+          this.size = cellSize = W / cells;
+          this.spawn();
+        }
+        draw() {
+          CTX.fillStyle = this.color;
+          CTX.shadowBlur = 20;
+          CTX.shadowColor = this.color;
+          CTX.fillRect(this.pos.x, this.pos.y, this.size, this.size);
+          CTX.shadowBlur = 0;
+        }
+      }
