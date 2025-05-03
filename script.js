@@ -176,3 +176,20 @@ let snake,
         this.color = `hsl(${helpers.randHue()},100%,50%)`;
         currentHue = this.color;
       };
+      class Particle {
+        constructor(pos, color) {
+          this.pos = new helpers.Vec(pos.x, pos.y);
+          this.color = color;
+          this.size = cellSize / 2;
+          this.vel = new helpers.Vec((Math.random()*6-3), (Math.random()*6-3));
+        }
+        draw() {
+          CTX.fillStyle = this.color;
+          CTX.fillRect(this.pos.x, this.pos.y, this.size, this.size);
+        }
+        update() {
+          this.size -= 0.3;
+          this.pos.add(this.vel);
+          this.draw();
+        }
+      }
