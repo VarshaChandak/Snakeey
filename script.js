@@ -221,4 +221,8 @@ function loop() {
       helpers.garbageCollector();
     } else gameOver();
   }
-  
+  function gameOver() {
+    CTX.fillStyle = '#4cffd7';
+    CTX.textAlign = 'center';
+    CTX.font = 'bold 30px sans-serif';
+    CTX.fillText('GAME OVER', W/2, H/2);
