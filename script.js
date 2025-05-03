@@ -128,4 +128,10 @@ let snake,
         if (this.pos.x < 0) this.pos.x = W - this.size;
         if (this.pos.y < 0) this.pos.y = H - this.size;
       };
-      
+      Snake.prototype.controlls = function() {
+        let s = this.size;
+        if (KEY.ArrowUp) this.dir = new helpers.Vec(0, -s);
+        if (KEY.ArrowDown) this.dir = new helpers.Vec(0, s);
+        if (KEY.ArrowLeft) this.dir = new helpers.Vec(-s, 0);
+        if (KEY.ArrowRight) this.dir = new helpers.Vec(s, 0);
+      };
