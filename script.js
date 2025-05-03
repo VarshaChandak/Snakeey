@@ -84,4 +84,22 @@ let snake,
         return start * (1 - t) + end * t;
       }
     };
-    
+    let KEY = {
+        ArrowUp: false,
+        ArrowRight: false,
+        ArrowDown: false,
+        ArrowLeft: false,
+        resetState() {
+          this.ArrowUp = this.ArrowRight = this.ArrowDown = this.ArrowLeft = false;
+        },
+        listen() {
+          addEventListener("keydown", e => {
+            if ((e.key === "ArrowUp" && this.ArrowDown) ||
+                (e.key === "ArrowDown" && this.ArrowUp) ||
+                (e.key === "ArrowLeft" && this.ArrowRight) ||
+                (e.key === "ArrowRight" && this.ArrowLeft)) return;
+            this.resetState();
+            if (this.hasOwnProperty(e.key)) this[e.key] = true;
+          });
+        }
+      };
