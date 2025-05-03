@@ -103,3 +103,22 @@ let snake,
           });
         }
       };
+      class Snake {
+        constructor() {
+          this.pos = new helpers.Vec(W / 2, H / 2);
+          this.dir = new helpers.Vec(0, 0);
+          this.delay = 5;
+          this.size = W / cells;
+          this.color = "white";
+          this.history = [];
+          this.total = 1;
+        }
+        draw() {
+          CTX.fillStyle = this.color;
+          CTX.shadowBlur = 20;
+          CTX.shadowColor = "rgba(255,255,255,0.3)";
+          CTX.fillRect(this.pos.x, this.pos.y, this.size, this.size);
+          CTX.shadowBlur = 0;
+          this.history.forEach(p => CTX.fillRect(p.x, p.y, this.size, this.size));
+        }
+      }
