@@ -20,3 +20,5 @@ To run the game locally:
 2. Open index.html in any modern browser.
 
 No build tools or installations required – pure HTML & JS!
+
+![alt text](<Screenshot 2025-05-03 123015.png>)
