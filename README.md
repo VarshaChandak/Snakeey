@@ -15,8 +15,8 @@ A modern Snake Game built with pure JavaScript and HTML Canvas. Features smooth 
 To run the game locally:
 
 1. Clone the repository:
-   git clone https://github.com/your-username/snake-game.git
-   cd snake-game
+   git clone https://github.com/VarshaChandak/Snakeey
+   
 2. Open index.html in any modern browser.
 
 No build tools or installations required – pure HTML & JS!
