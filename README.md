@@ -21,4 +21,5 @@ To run the game locally:
 
 No build tools or installations required – pure HTML & JS!
 
-![alt text](<Screenshot 2025-05-03 123015.png>)
+![image](https://github.com/user-attachments/assets/2cdb2936-d297-4f1c-b198-e1a4fd0416bf)
+
